@@ -2,6 +2,10 @@ import React from "react";
 
 function Footer() {
   const NAME = "Sudharshan Thirunarayanan";
+  const homePageURL =
+    window.location.origin === "driverinterface.dev"
+      ? "driverinterface.dev"
+      : "/hero";
 
   return (
     <footer className="mt-24 border-t border-gray-200 bg-white dark:bg-black py-8">
@@ -17,7 +21,7 @@ function Footer() {
             Contact
           </a>
           <a
-            href="/hero"
+            href={homePageURL}
             target="_blank"
             rel="noopener noreferrer"
             className="text-black transition dark:text-white"
