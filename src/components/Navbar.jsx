@@ -14,6 +14,7 @@ export default function Navbar() {
                     <li><a href="#experience" className="hover:text-gray-600">Experience</a></li>
                     <li><a href="#contact" className="hover:text-gray-600">Contact</a></li>
                     <li><a href="#projects" className="hover:text-gray-600">Projects</a></li>
+                    <li><a href="#email-me" className="hover:text-gray-600">Get in touch</a></li>
                 </ul>
             </nav>
         </header>
