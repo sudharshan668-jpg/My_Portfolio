@@ -14,7 +14,7 @@ export default function Email() {
         "service_4a76adr",
         "template_yz0rs5s",
         e.target,
-        "R2omOFUv1UWJ34xo5"
+        "R2omOFUv1UWJ34xo5",
       )
       .then(
         () => {
@@ -25,7 +25,7 @@ export default function Email() {
         () => {
           setStatus("Failed to send message.");
           setLoading(false);
-        }
+        },
       );
   };
 
@@ -71,9 +71,7 @@ export default function Email() {
           {loading ? "Sending..." : "Send Message"}
         </button>
 
-        {status && (
-          <p className="text-center mt-2 text-green-400">{status}</p>
-        )}
+        {status && <p className="text-center mt-2 text-green-400">{status}</p>}
       </form>
     </section>
   );

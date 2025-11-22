@@ -7,7 +7,7 @@ import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 import Projects from "./components/Project";
-import Email from './components/Email-me';
+import Email from "./components/Email-me";
 
 export default function App() {
   return (
