@@ -4,7 +4,7 @@ function Footer() {
   const NAME = "Sudharshan Thirunarayanan";
   const homePageURL =
     window.location.origin === "https://driverinterace.dev"
-      ? "driverinterface.dev"
+      ? "https://driverinterace.dev"
       : "/hero";
 
   return (
