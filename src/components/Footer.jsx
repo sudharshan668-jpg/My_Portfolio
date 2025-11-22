@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   const NAME = "Sudharshan Thirunarayanan";
   const homePageURL =
-    window.location.origin === "driverinterface.dev"
+    window.location.origin === "https://driverinterace.dev"
       ? "driverinterface.dev"
       : "/hero";
 
