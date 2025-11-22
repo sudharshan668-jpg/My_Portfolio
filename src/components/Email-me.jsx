@@ -61,7 +61,7 @@ export default function Email() {
           rows="5"
           placeholder="Your Message"
           required
-          className="p-3 rounded border border-black border-[2px] dark:border-white bg-gray-50 dark:bg-white"
+          className="p-3 rounded border border-black border-[2px] dark:border-white bg-gray-50 dark:bg-white dark:text-black"
         ></textarea>
 
         <button
