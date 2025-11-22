@@ -32,20 +32,20 @@ export default function Email() {
   return (
     <section
       id="email-me"
-      className="py-20 px-6 max-w-3xl mx-auto text-gray-900 dark:text-gray-100"
+      className="py-20 px-6 max-w-3xl mx-auto text-gray-900 dark:text-white"
     >
       <h2 className="text-4xl font-bold mb-6 text-left">Contact Me</h2>
 
       <form
         onSubmit={sendEmail}
-        className="flex flex-col space-y-5 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg"
+        className="flex flex-col space-y-5 bg-white dark:bg-black p-8 rounded-lg shadow-lg border-black dark:border-white border-[2px]"
       >
         <input
           type="text"
           name="name"
           placeholder="Full Name"
           required
-          className="p-3 rounded border dark:border-gray-700 bg-gray-50 dark:bg-gray-700"
+          className="p-3 rounded border border-black border-[2px] dark:border-white bg-gray-50 dark:bg-white"
         />
 
         <input
@@ -53,7 +53,7 @@ export default function Email() {
           name="email"
           placeholder="Email Address"
           required
-          className="p-3 rounded border dark:border-gray-700 bg-gray-50 dark:bg-gray-700"
+          className="p-3 rounded border border-black border-[2px] dark:border-white bg-gray-50 dark:bg-white"
         />
 
         <textarea
@@ -61,12 +61,12 @@ export default function Email() {
           rows="5"
           placeholder="Your Message"
           required
-          className="p-3 rounded border dark:border-gray-700 bg-gray-50 dark:bg-gray-700"
+          className="p-3 rounded border border-black border-[2px] dark:border-white bg-gray-50 dark:bg-white"
         ></textarea>
 
         <button
           type="submit"
-          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg"
+          className="bg-black font-bold hover:bg-black dark:hover:bg-gray-00 text-white font-semibold py-3 rounded-lg dark:bg-black dark:text-white dark:border-white dark:border-white border-[2px]"
         >
           {loading ? "Sending..." : "Send Message"}
         </button>

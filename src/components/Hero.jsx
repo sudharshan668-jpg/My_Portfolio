@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "./Button";
 
 export default function Hero() {
   return (
@@ -12,20 +13,15 @@ export default function Hero() {
       <p className="text-xl md:text-2xl max-w-xl text-gray-600 dark:text-gray-300">
         Senior Salesforce Commerce Cloud Developer / Release Manager
       </p>
-      <div className="mt-8 px-6 py-3 button-wrapper flex gap-8 ml-12 w-[25rem]">
-        <a
-          href="#contact"
-          className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-        >
-          Contact Me
-        </a>
-        <a
-          href="#email-me"
-          className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-        >
-          Get in Touch
-        </a>
-      </div>
+      <span className="text-m text-black dark:text-gray-300 mt-[34px] max-w-[51rem] text-center text-[18px]">
+        A passionate developer in Retail Technology, specializing in Salesforce
+        Commerce Cloud and modern e-commerce solutions. I thrive on turning
+        complex challenges like payment integrations, headless architectures,
+        and release management into seamless, scalable, and delightful shopping
+        experiences. With a focus on innovation and efficiency, I build digital
+        platforms that empower businesses and enhance user experiences.
+      </span>
+      <Button />
     </section>
   );
 }
