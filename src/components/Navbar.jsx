@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
+import ThemeLogo from "./BrandLogo";
 
 export default function Navbar() {
   const [active, setActive] = useState("about");
@@ -11,7 +12,7 @@ export default function Navbar() {
     }`;
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white/90 dark:bg-black backdrop-blur-lg shadow z-50 dark:border-white">
+    <header className="fixed top-0 left-0 w-full bg-white/90 dark:bg-[#0A0A0A] backdrop-blur-lg shadow z-50 dark:border-white">
       <nav className="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
         {/* Logo */}
         <p className="text-xl font-bold">
@@ -23,7 +24,7 @@ export default function Navbar() {
               setOpen(false);
             }}
           >
-            Sudharshan Thirunarayanan
+            <ThemeLogo />
           </a>
         </p>
 
