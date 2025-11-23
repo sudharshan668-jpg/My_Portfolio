@@ -9,9 +9,9 @@ export default function ThemeLogo() {
 
   const imageURL = () => {
     if (document.documentElement.classList.contains("dark")) {
-      return "./../../public/assets/Brand_Logo_Dark_new.png";
+      return "./../../dist/assets/Brand_Logo_Dark_new.png";
     } else {
-      return "./../../public/assets/Brand_Logo_Light_new.png";
+      return "./../../dist/assets/Brand_Logo_Light_new.png";
     }
   };
 
