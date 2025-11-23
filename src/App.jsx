@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import Projects from "./components/Project";
 import Email from "./components/Email-me";
 import Footer from "./components/Footer";
+import Swiper from "./components/Swiper";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
       <Hero />
       <About />
       <Skills />
+      <Swiper />
       <Experience />
       <Contact />
       <Projects />
