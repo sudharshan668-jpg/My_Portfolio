@@ -6,6 +6,10 @@ module.exports = {
       zIndex: {
         '100': '100',
         '999': '999',
+      },
+      screens: {
+        IphoneSE: '370px',
+        Iphone12: '390px'
       }
     }
   },
