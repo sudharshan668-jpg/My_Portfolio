@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Keyboard } from "swiper/modules";
 import { certifications } from "./Constants";
 import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
+import Loader from "./Loader";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -45,13 +46,17 @@ export default function CertificationsCarousel() {
                 flex flex-col justify-between"
               >
                 <div>
-                  {cert.image && (
-                    <img
-                      src={cert.image}
-                      alt={cert.title}
-                      className="w-full h-32 object-contain mb-4"
-                    />
-                  )}
+                  {() => {
+                    if (cert.image.indexOf("UI_UX") !== -1) {
+                      cert.image && (
+                        <img
+                          src={cert.image}
+                          alt={cert.title}
+                          className="w-full h-32 object-contain mb-4"
+                        />
+                      );
+                    }
+                  }}
 
                   <h3
                     className="text-xl font-semibold 
