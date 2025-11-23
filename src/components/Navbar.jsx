@@ -7,7 +7,8 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const linkClass = (component) =>
-    `cursor-pointer hover:underline ${active === component ? "underline underline-offset-4" : ""
+    `cursor-pointer hover:underline ${
+      active === component ? "underline underline-offset-4" : ""
     }`;
 
   return (
@@ -61,8 +62,9 @@ export default function Navbar() {
 
       {/* Mobile Menu with Height Animation */}
       <div
-        className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out ${open ? "max-h-96" : "max-h-0"
-          }`}
+        className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out ${
+          open ? "max-h-96" : "max-h-0"
+        }`}
       >
         <ul className="flex flex-col items-center justify-center space-y-4 py-6 bg-white/90 dark:bg-black w-full text-lg">
           {[

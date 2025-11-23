@@ -11,7 +11,8 @@ module.exports = {
         IphoneSE: '370px',
         Iphone12: '390px',
         GooglePx: "360px",
-        Desktop: '950px'
+        Desktop: '950px',
+        IPhone13: '389px'
       },
       fontSize: {
         '14px': '14px',
