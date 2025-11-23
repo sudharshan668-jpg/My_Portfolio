@@ -8,7 +8,15 @@ export default function ThemeLogo() {
   }, []);
 
   const imageURL = () => {
-    return localStorage.getItem("image");
+    if (localStorage.getItem("image")) {
+      return localStorage.getItem("image");
+    } else {
+      if (document.documentElement.classList.contains("dark")) {
+        return "./assets/Brand_Logo_Dark_new.png";
+      } else {
+        return "./assets/Brand_Logo_Light_new.png";
+      }
+    }
   };
 
   return (
