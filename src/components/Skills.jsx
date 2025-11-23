@@ -11,6 +11,11 @@ export default function Skills() {
     "Headless",
     "Shopify",
     "Release Management",
+    "React",
+    "SvelteKit",
+    "On-Demand Sandbox setup from scratch",
+    "Omnichannel Retail",
+    "Tailwind CSS",
   ];
 
   return (

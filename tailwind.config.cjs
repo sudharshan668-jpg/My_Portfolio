@@ -9,7 +9,8 @@ module.exports = {
       },
       screens: {
         IphoneSE: '370px',
-        Iphone12: '390px'
+        Iphone12: '390px',
+        GooglePx: "360px"
       }
     }
   },

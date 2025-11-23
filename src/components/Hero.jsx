@@ -4,7 +4,7 @@ import { Button } from "./Button";
 export default function Hero() {
   return (
     <section
-      className="flex flex-col items-center justify-center h-screen text-center px-6 IphoneSE:pt-[14rem] IphoneSE:mb-[10rem] Iphone12:pt-[0rem] Iphone12:mb-[0rem]"
+      className="flex flex-col items-center justify-center h-screen text-center px-6 GooglePx:pt-[12rem] GooglePx:mb-[10rem] IphoneSE:pt-[14rem] IphoneSE:mb-[10rem] Iphone12:pt-[5rem] Iphone12:mb-[5rem]"
       id="hero"
     >
       <h1 className="text-4xl md:text-6xl font-bold mb-4">
