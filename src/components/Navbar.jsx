@@ -7,13 +7,12 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const linkClass = (component) =>
-    `cursor-pointer hover:underline ${
-      active === component ? "underline underline-offset-4" : ""
+    `cursor-pointer hover:underline ${active === component ? "underline underline-offset-4" : ""
     }`;
 
   return (
     <header className="fixed top-0 left-0 w-full bg-white/90 dark:bg-[#0A0A0A] backdrop-blur-lg shadow z-50 dark:border-white">
-      <nav className="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
+      <nav className="max-w-6xl mx-auto flex items-center justify-between py-4 px-6 dark:bg-[#0A0A0A]">
         {/* Logo */}
         <p className="text-xl font-bold">
           <a
@@ -62,9 +61,8 @@ export default function Navbar() {
 
       {/* Mobile Menu with Height Animation */}
       <div
-        className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out ${
-          open ? "max-h-96" : "max-h-0"
-        }`}
+        className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out ${open ? "max-h-96" : "max-h-0"
+          }`}
       >
         <ul className="flex flex-col items-center justify-center space-y-4 py-6 bg-white/90 dark:bg-black w-full text-lg">
           {[
