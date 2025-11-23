@@ -11,10 +11,10 @@ export default function DarkModeToggle() {
     if (imageSrc) {
       if (theme === "light") {
         imageSrc.removeAttribute("src");
-        imageSrc.src = "./../../static/assets/Brand_Logo_Dark_new.png";
+        imageSrc.src = "./../../public/assets/Brand_Logo_Dark_new.png";
       } else {
         imageSrc.removeAttribute("src");
-        imageSrc.src = "./../../static/assets/Brand_Logo_Light_new.png";
+        imageSrc.src = "./../../public/assets/Brand_Logo_Light_new.png";
       }
     }
   };
