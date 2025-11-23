@@ -1,10 +1,22 @@
 import React, { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import ThemeLogo from "./BrandLogo";
+import { comment } from "postcss/lib/postcss";
 
 export default function Navbar() {
   const [active, setActive] = useState("about");
   const [open, setOpen] = useState(false);
+
+  const itemsTitle = [
+    {
+      title: "email-me",
+      text: "Get in Touch",
+    },
+    {
+      title: "swiper",
+      text: "Certifications",
+    },
+  ];
 
   const linkClass = (component) =>
     `cursor-pointer hover:underline ${
@@ -37,6 +49,7 @@ export default function Navbar() {
             "contact",
             "projects",
             "email-me",
+            "certifications",
           ].map((item) => (
             <li key={item}>
               <a
@@ -74,6 +87,7 @@ export default function Navbar() {
             "contact",
             "projects",
             "email-me",
+            "certifications",
           ].map((item) => (
             <li key={item}>
               <a

@@ -10,7 +10,10 @@ import "swiper/css/pagination";
 
 export default function CertificationsCarousel() {
   return (
-    <section className="py-16 Desktop:pl-[17rem] flex items-center">
+    <section
+      className="py-16 Desktop:pl-[17rem] flex items-center"
+      id="certifications"
+    >
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold mb-6">Certifications</h2>
 
