@@ -8,7 +8,7 @@ export default function DarkModeToggle() {
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="fixed right-5 top-[52rem] p-3 rounded-full shadow-lg bg-gray-200 dark:bg-gray-700 z-100"
+      className="fixed right-5 IphoneSE:top-[35rem] top-[52rem] p-3 rounded-full shadow-lg bg-gray-200 dark:bg-gray-700 z-100"
     >
       {theme === "dark" ? <FiSun /> : <FiMoon />}
     </button>
