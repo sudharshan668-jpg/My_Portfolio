@@ -8,15 +8,7 @@ export default function ThemeLogo() {
   }, []);
 
   const imageURL = () => {
-    if (document.documentElement.classList.contains("dark")) {
-      return window.location.origin === "https://driverinterface.dev"
-        ? "./assets/Brand_Logo_Dark_new.png"
-        : "./../../dist/assets/Brand_Logo_Dark_new.png";
-    } else {
-      return window.location.origin === "https://driverinterface.dev"
-        ? "./assets/Brand_Logo_Light_new.png"
-        : "./../../dist/assets/Brand_Logo_Light_new.png";
-    }
+    return localStorage.getItem("image");
   };
 
   return (

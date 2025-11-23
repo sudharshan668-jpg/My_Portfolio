@@ -11,16 +11,22 @@ export default function DarkModeToggle() {
     if (imageSrc) {
       if (theme === "light") {
         imageSrc.removeAttribute("src");
-        imageSrc.src =
-          window.location.origin === "https://driverinterface.dev"
-            ? "./assets/Brand_Logo_Dark_new.png"
-            : "./../../dist/assets/Brand_Logo_Dark_new.png";
+        if (window.location.origin === '"https://driverinterface.dev"') {
+          imageSrc.src = "./assets/Brand_Logo_Dark_new.png";
+        } else if (window.location.origin === "http://localhost:5173/") {
+          imageSrc.src = "./../../dist/assets/Brand_Logo_Dark_new.png";
+        } else {
+          imageSrc.src = "./assets/Brand_Logo_Dark_new.png";
+        }
       } else {
         imageSrc.removeAttribute("src");
-        imageSrc.src =
-          window.location.origin === "https://driverinterface.dev"
-            ? "./assets/Brand_Logo_Light_new.png"
-            : "./../../dist/assets/Brand_Logo_Light_new.png";
+        if (window.location.origin === '"https://driverinterface.dev"') {
+          imageSrc.src = "./assets/Brand_Logo_Light_new.png";
+        } else if (window.location.origin === "http://localhost:5173/") {
+          imageSrc.src = "./../../dist/assets/Brand_Logo_Light_new.png";
+        } else {
+          imageSrc.src = "./assets/Brand_Logo_Light_new.png";
+        }
       }
     }
   };
