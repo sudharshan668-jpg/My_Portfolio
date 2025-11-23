@@ -23,7 +23,6 @@ export default function Contact() {
           Go to my linkedin
           <ArrowUpRightIcon
             className="w-4 h-16 text-black dark:text-white"
-            titleClass="text-black dark:text-white"
             textAnchor="end"
           />
         </a>

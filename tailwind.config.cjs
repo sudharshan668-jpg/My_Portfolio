@@ -11,6 +11,11 @@ module.exports = {
         IphoneSE: '370px',
         Iphone12: '390px',
         GooglePx: "360px"
+      },
+      fontSize: {
+        '14px': '14px',
+        '13px': '13px',
+        '11px': '11px'
       }
     }
   },

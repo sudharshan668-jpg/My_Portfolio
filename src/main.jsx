@@ -5,6 +5,8 @@ import "./index.css";
 
 const rootElement = document.getElementById("root");
 rootElement.classList.add("overflow-x-hidden");
+rootElement.classList.add("bg-white");
+rootElement.classList.add("darks:bg-black");
 
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
