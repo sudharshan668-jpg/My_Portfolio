@@ -11,10 +11,16 @@ export default function DarkModeToggle() {
     if (imageSrc) {
       if (theme === "light") {
         imageSrc.removeAttribute("src");
-        imageSrc.src = "./../../dist/assets/Brand_Logo_Dark_new.png";
+        imageSrc.src =
+          window.location.origin === "https://driverinterface.dev"
+            ? "./assets/Brand_Logo_Dark_new.png"
+            : "./../../dist/assets/Brand_Logo_Dark_new.png";
       } else {
         imageSrc.removeAttribute("src");
-        imageSrc.src = "./../../dist/assets/Brand_Logo_Light_new.png";
+        imageSrc.src =
+          window.location.origin === "https://driverinterface.dev"
+            ? "./assets/Brand_Logo_Light_new.png"
+            : "./../../dist/assets/Brand_Logo_Light_new.png";
       }
     }
   };
