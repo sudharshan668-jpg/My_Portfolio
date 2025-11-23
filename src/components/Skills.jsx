@@ -16,6 +16,8 @@ export default function Skills() {
     "On-Demand Sandbox setup from scratch",
     "Omnichannel Retail",
     "Tailwind CSS",
+    "Vercel",
+    "Github",
   ];
 
   return (
