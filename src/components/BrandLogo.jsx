@@ -1,28 +1,33 @@
 import { useEffect, useState } from "react";
 
 export default function ThemeLogo() {
-  const [dark, setDark] = useState(false);
+  const [logoSrc, setLogoSrc] = useState(() => {
+    const isDark = document.documentElement.classList.contains("dark");
+    const isDev = window.location.origin.includes("localhost");
+    const basePath = isDev ? "./../../dist/assets" : "./assets";
+    return `${basePath}/Brand_Logo_${isDark ? "Dark" : "Light"}_new.png`;
+  });
 
   useEffect(() => {
-    setDark(document.documentElement.classList.contains("dark"));
-  }, []);
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      const isDev = window.location.origin.includes("localhost");
+      const basePath = isDev ? "./../../dist/assets" : "./assets";
+      setLogoSrc(`${basePath}/Brand_Logo_${isDark ? "Dark" : "Light"}_new.png`);
+    });
 
-  const imageURL = () => {
-    if (localStorage.getItem("image")) {
-      return localStorage.getItem("image");
-    } else {
-      if (document.documentElement.classList.contains("dark")) {
-        return "./assets/Brand_Logo_Dark_new.png";
-      } else {
-        return "./assets/Brand_Logo_Light_new.png";
-      }
-    }
-  };
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <img
-      src={imageURL()}
-      className="bg-white dark:bg-black Desktop:w-[10rem] Desktop:h-[6rem] IphoneSE:w-[9rem] IphoneSE:m-h-[7rem]"
+      src={logoSrc}
+      className="bg-white dark:bg-black Desktop:w-[10rem] Desktop:h-[6rem] IphoneSE:w-[9rem] IphoneSE:max-h-[7rem] object-contain"
       alt="Brand Logo"
     />
   );

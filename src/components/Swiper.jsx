@@ -2,7 +2,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Keyboard } from "swiper/modules";
 import { certifications } from "./Constants";
 import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
-import Loader from "./Loader";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -11,11 +10,11 @@ import "swiper/css/pagination";
 export default function CertificationsCarousel() {
   return (
     <section
-      className="py-16 Desktop:pl-[17rem] flex items-center"
+      className="py-16 px-6"
       id="certifications"
     >
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-6">Certifications</h2>
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-3xl font-bold mb-8 text-center md:text-left">Certifications</h2>
 
         <Swiper
           modules={[Navigation, Pagination, Keyboard]}
@@ -37,34 +36,28 @@ export default function CertificationsCarousel() {
           {certifications.map((cert, index) => (
             <SwiperSlide key={index}>
               <div
-                className="h-1/2 w-[21rem] p-6 rounded-2xl border 
-                bg-white/70 dark:bg-white/5 
+                className="h-full min-h-[280px] w-full p-6 rounded-2xl border
+                bg-white/70 dark:bg-white/5
                 border-gray-300 dark:border-white/10
                 backdrop-blur-md
                 shadow-[0_0_20px_rgba(0,0,0,0.05)]
                 dark:shadow-[0_0_25px_rgba(255,255,255,0.05)]
-                transition-all duration-300 
-                hover:scale-[1.02] hover:shadow-lg 
+                transition-all duration-300
+                hover:scale-[1.02] hover:shadow-lg
                 dark:hover:shadow-[0_0_35px_rgba(255,255,255,0.08)]
                 flex flex-col justify-between"
               >
                 <div>
-                  {() => {
-                    if (cert.image.indexOf("UI_UX") !== -1) {
-                      cert.image && (
-                        <img
-                          src={cert.image}
-                          alt={cert.title}
-                          className="w-full h-32 object-contain mb-4"
-                        />
-                      );
-                    }
-                  }}
+                  {cert.image && (
+                    <img
+                      src={cert.image}
+                      alt={cert.title}
+                      className="w-full h-32 object-contain mb-4 rounded"
+                      loading="lazy"
+                    />
+                  )}
 
-                  <h3
-                    className="text-xl font-semibold 
-                    text-gray-900 dark:text-white"
-                  >
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                     {cert.title}
                   </h3>
 
@@ -82,12 +75,12 @@ export default function CertificationsCarousel() {
                     href={cert.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 text-black dark:text-white hover:underline inline-flex items-center gap-1"
+                    className="mt-4 text-black dark:text-white hover:underline inline-flex items-center gap-1 transition-colors"
                   >
                     View Certificate
                     <ArrowUpRightIcon
-                      className="w-4 h-16 text-black dark:text-white"
-                      textAnchor="end"
+                      className="w-4 h-4 text-black dark:text-white"
+                      aria-hidden="true"
                     />
                   </a>
                 )}
