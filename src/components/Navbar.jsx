@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import ThemeLogo from "./BrandLogo";
-import { comment } from "postcss/lib/postcss";
 
 export default function Navbar() {
   const [active, setActive] = useState("about");
@@ -67,7 +66,12 @@ export default function Navbar() {
 
         {/* Mobile Hamburger */}
         <div className="md:hidden">
-          <button onClick={() => setOpen(!open)}>
+          <button
+            onClick={() => setOpen(!open)}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+          >
             {open ? <HiX size={28} /> : <HiMenu size={28} />}
           </button>
         </div>

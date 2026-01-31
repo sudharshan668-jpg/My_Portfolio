@@ -38,14 +38,15 @@ export default function Email() {
 
       <form
         onSubmit={sendEmail}
-        className="flex flex-col space-y-5 bg-white dark:bg-black p-8 rounded-lg shadow-lg border-black dark:border-white border-[2px]"
+        className="flex flex-col space-y-5 bg-white dark:bg-black p-6 md:p-8 rounded-lg shadow-lg border-2 border-black dark:border-white"
       >
         <input
           type="text"
           name="name"
           placeholder="Full Name"
           required
-          className="p-3 rounded border border-black border-[2px] dark:border-white bg-gray-50 dark:bg-white"
+          disabled={loading}
+          className="p-3 rounded border-2 border-black dark:border-white bg-gray-50 dark:bg-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all disabled:opacity-50"
         />
 
         <input
@@ -53,7 +54,8 @@ export default function Email() {
           name="email"
           placeholder="Email Address"
           required
-          className="p-3 rounded border border-black border-[2px] dark:border-white bg-gray-50 dark:bg-white"
+          disabled={loading}
+          className="p-3 rounded border-2 border-black dark:border-white bg-gray-50 dark:bg-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all disabled:opacity-50"
         />
 
         <textarea
@@ -61,17 +63,23 @@ export default function Email() {
           rows="5"
           placeholder="Your Message"
           required
-          className="p-3 rounded border border-black border-[2px] dark:border-white bg-gray-50 dark:bg-white dark:text-black"
+          disabled={loading}
+          className="p-3 rounded border-2 border-black dark:border-white bg-gray-50 dark:bg-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all resize-none disabled:opacity-50"
         ></textarea>
 
         <button
           type="submit"
-          className="bg-black font-bold hover:bg-black dark:hover:bg-gray-00 text-white font-semibold py-3 rounded-lg dark:bg-black dark:text-white dark:border-white dark:border-white border-[2px]"
+          disabled={loading}
+          className="bg-black text-white font-bold py-3 rounded-lg dark:bg-white dark:text-black border-2 border-black dark:border-white hover:scale-105 transition-transform duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
         >
           {loading ? "Sending..." : "Send Message"}
         </button>
 
-        {status && <p className="text-center mt-2 text-green-400">{status}</p>}
+        {status && (
+          <p className={`text-center mt-2 font-medium ${status.includes("success") ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"}`}>
+            {status}
+          </p>
+        )}
       </form>
     </section>
   );

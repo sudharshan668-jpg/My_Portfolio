@@ -4,42 +4,27 @@ import { FiSun, FiMoon } from "react-icons/fi";
 
 export default function DarkModeToggle() {
   const [theme, setTheme] = useDarkMode();
-  const setImageSrc = (theme) => {
-    const /** @type {HTMLImageElement} */ imageSrc = document.querySelector(
-        "#root > div > header > nav > p > a > img",
-      );
-    if (imageSrc) {
-      if (theme === "light") {
-        imageSrc.removeAttribute("src");
-        if (window.location.origin === '"https://driverinterface.dev"') {
-          imageSrc.src = "./assets/Brand_Logo_Dark_new.png";
-        } else if (window.location.origin === "http://localhost:5173/") {
-          imageSrc.src = "./../../dist/assets/Brand_Logo_Dark_new.png";
-        } else {
-          imageSrc.src = "./assets/Brand_Logo_Dark_new.png";
-        }
-      } else {
-        imageSrc.removeAttribute("src");
-        if (window.location.origin === '"https://driverinterface.dev"') {
-          imageSrc.src = "./assets/Brand_Logo_Light_new.png";
-        } else if (window.location.origin === "http://localhost:5173/") {
-          imageSrc.src = "./../../dist/assets/Brand_Logo_Light_new.png";
-        } else {
-          imageSrc.src = "./assets/Brand_Logo_Light_new.png";
-        }
-      }
+
+  const handleToggle = () => {
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+
+    // Update logo image
+    const logoImg = document.querySelector("header img[alt='Brand Logo']");
+    if (logoImg) {
+      const isDev = window.location.origin.includes("localhost");
+      const basePath = isDev ? "./../../dist/assets" : "./assets";
+      logoImg.src = `${basePath}/Brand_Logo_${newTheme === "dark" ? "Dark" : "Light"}_new.png`;
     }
   };
 
   return (
     <button
-      onClick={() => {
-        setTheme(theme === "dark" ? "light" : "dark");
-        setImageSrc(theme);
-      }}
-      className="fixed right-5 IphoneSE:top-[35rem] top-[52rem] p-3 rounded-full shadow-lg bg-gray-200 dark:bg-gray-700 z-100"
+      onClick={handleToggle}
+      className="fixed right-5 IphoneSE:top-[35rem] top-[52rem] p-3 rounded-full shadow-lg bg-gray-200 dark:bg-gray-700 z-100 transition-all hover:scale-110"
+      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
     >
-      {theme === "dark" ? <FiSun /> : <FiMoon />}
+      {theme === "dark" ? <FiSun size={20} /> : <FiMoon size={20} />}
     </button>
   );
 }
