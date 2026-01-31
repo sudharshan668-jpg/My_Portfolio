@@ -3,17 +3,13 @@ import { useEffect, useState } from "react";
 export default function ThemeLogo() {
   const [logoSrc, setLogoSrc] = useState(() => {
     const isDark = document.documentElement.classList.contains("dark");
-    const isDev = window.location.origin.includes("localhost");
-    const basePath = isDev ? "./../../dist/assets" : "./assets";
-    return `${basePath}/Brand_Logo_${isDark ? "Dark" : "Light"}_new.png`;
+    return `/assets/Brand_Logo_${isDark ? "Dark" : "Light"}_new.png`;
   });
 
   useEffect(() => {
     const observer = new MutationObserver(() => {
       const isDark = document.documentElement.classList.contains("dark");
-      const isDev = window.location.origin.includes("localhost");
-      const basePath = isDev ? "./../../dist/assets" : "./assets";
-      setLogoSrc(`${basePath}/Brand_Logo_${isDark ? "Dark" : "Light"}_new.png`);
+      setLogoSrc(`/assets/Brand_Logo_${isDark ? "Dark" : "Light"}_new.png`);
     });
 
     observer.observe(document.documentElement, {
